@@ -5,7 +5,6 @@ import {
     User,
     signInWithPopup,
     GoogleAuthProvider,
-    signInAnonymously,
     signOut as firebaseSignOut,
     onAuthStateChanged,
     signInWithEmailAndPassword,
@@ -17,7 +16,6 @@ interface AuthContextType {
     user: User | null;
     loading: boolean;
     signInWithGoogle: () => Promise<void>;
-    signInAsGuest: () => Promise<void>;
     logout: () => Promise<void>;
 }
 
@@ -25,7 +23,6 @@ const AuthContext = createContext<AuthContextType>({
     user: null,
     loading: true,
     signInWithGoogle: async () => { },
-    signInAsGuest: async () => { },
     logout: async () => { },
 });
 
@@ -54,15 +51,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         }
     };
 
-    const signInAsGuest = async () => {
-        try {
-            await signInAnonymously(auth);
-        } catch (error) {
-            console.error('Error signing in as guest:', error);
-            throw error;
-        }
-    };
-
     const logout = async () => {
         try {
             await firebaseSignOut(auth);
@@ -73,7 +61,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, loading, signInWithGoogle, signInAsGuest, logout }}>
+        <AuthContext.Provider value={{ user, loading, signInWithGoogle, logout }}>
             {children}
         </AuthContext.Provider>
     );

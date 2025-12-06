@@ -7,7 +7,7 @@ ScenarioLab is an AI-powered roleplay scenario practice platform that helps user
 - **AI-Powered Conversations**: Practice difficult conversations with AI agents using real-time voice communication
 - **Custom Scenarios**: Create and save your own roleplay scenarios
 - **Scenario Library**: Browse and practice from saved scenarios
-- **Authentication**: Secure login with Google or continue as guest
+- **Authentication**: Secure login with Google or email/password
 - **Real-time Communication**: Voice-based conversations powered by Agora RTC
 - **Firebase Integration**: Store and manage scenarios in the cloud
 - **Modern UI**: Beautiful, responsive interface with glass morphism design
@@ -16,7 +16,7 @@ ScenarioLab is an AI-powered roleplay scenario practice platform that helps user
 
 - **Frontend**: Next.js 14, React, TypeScript
 - **Styling**: Tailwind CSS, Custom CSS with glass morphism effects
-- **Authentication**: Firebase Auth (Google Sign-In, Anonymous)
+- **Authentication**: Firebase Auth (Google Sign-In, Email/Password)
 - **Database**: Firestore
 - **Real-time Audio**: Agora RTC
 - **AI**: Groq LLM for conversational AI
@@ -138,7 +138,7 @@ conversational-ai-nextjs-client/
 
 ## Usage
 
-1. **Sign In**: Use Google authentication or continue as guest
+1. **Sign In**: Use Google authentication or email/password
 2. **Create Scenario**: 
    - Fill in scenario details (title, roles, situation, objective)
    - Select difficulty level
@@ -167,17 +167,6 @@ conversational-ai-nextjs-client/
 - Brian (Male)
 - Emma (Female)
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-MIT License - feel free to use this project for your own purposes.
-
-## Support
-
-For issues or questions, please open an issue on GitHub.
 
 ---
 
